@@ -34,6 +34,7 @@ void writeBit(unsigned char bit, FILE* outfp, int samplesPerBit, float& phase, b
 int main(int argc, const char * argv[]) {
     
     const char* fname = argv[1];
+    const char* outputFname = argv[2];
     printf("fname is: %s\n", fname);
     
     FILE* fp = fopen(fname, "rb");
@@ -62,7 +63,7 @@ int main(int argc, const char * argv[]) {
     
     // generating audio file
     // write out samples
-    FILE* outfp = fopen("out.raw", "wb");
+    FILE* outfp = fopen(outputFname, "wb");
     float sinphase = 0.0f;
     // write a header
     
